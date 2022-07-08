@@ -21,7 +21,7 @@
 }
 
 .app__navbar-link {
-    margin: 0 3rem;
+    margin-left: 8rem;
 
     a {
         color: white;
@@ -39,4 +39,48 @@
 
 .logo:hover {
     color: $secondary-color;
+}
+
+.app__navbar-smallscreen {
+    display: none;
+}
+
+.app__navbar-smallscreen svg {
+    cursor: pointer;
+}
+
+.app__navbar-smallscreen_overlay {
+    position: fixed;
+    top:0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $white-color;
+}
+
+
+// <div className="app__navbar-smallscreen_overlay">
+// <ul className="app__navbar-smallscreen_links">
+//   <li className="app__navbar-link">
+//     <Link to="/">HOME</Link>
+//   </li>
+//   <li className="app__navbar-link">
+//     <Link to="/fitness-hub">FITNESS HUB</Link>
+//   </li>
+//   <li className="app__navbar-link">
+//     <a href="/exercises">EXERCISES</a>
+
+@media screen and (max-width: 1024px) {
+    .app__navbar-link {
+        margin-left: 4rem; 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app__navbar-links {
+        displaY: none;
+    }
+    .app__navbar-smallscreen {
+        display: flex;
+    }
 }
