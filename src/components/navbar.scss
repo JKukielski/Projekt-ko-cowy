@@ -43,10 +43,13 @@
 
 .app__navbar-smallscreen {
     display: none;
+    transition: 1s ease-in-out;
 }
 
 .app__navbar-smallscreen svg {
     cursor: pointer;
+    position: absolute;
+    z-index: 1;
 }
 
 .app__navbar-smallscreen_overlay {
@@ -56,19 +59,35 @@
     height: 100%;
     width: 100%;
     background-color: $white-color;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
+.app__navbar-smallscreen_links {
+    list-style: none;
 
-// <div className="app__navbar-smallscreen_overlay">
-// <ul className="app__navbar-smallscreen_links">
-//   <li className="app__navbar-link">
-//     <Link to="/">HOME</Link>
-//   </li>
-//   <li className="app__navbar-link">
-//     <Link to="/fitness-hub">FITNESS HUB</Link>
-//   </li>
-//   <li className="app__navbar-link">
-//     <a href="/exercises">EXERCISES</a>
+    .app__navbar-link {
+        position: relative;
+    }
+
+    .app__navbar-link a {
+        color: $primary-color;
+        font-family: $heading-font;
+        font-size: 72px;
+        transition: 0.5s ;
+        width: 100%;
+        display: flex;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+    
+}
 
 @media screen and (max-width: 1024px) {
     .app__navbar-link {
@@ -78,9 +97,52 @@
 
 @media screen and (max-width: 768px) {
     .app__navbar-links {
-        displaY: none;
+        display: none;
     }
     .app__navbar-smallscreen {
         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .app__navbar-smallscreen {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .app__navbar {
+        padding: 0 4rem;
+    }
+
+    .app__navbar-smallscreen_links {
+
+        .app__navbar-link a {
+            font-size: 54px;        
+        }
+    }
+}
+
+@media screen and (max-width: 321px) {
+
+    
+.logo {
+    font-size: 36px;
+}
+    .app__navbar-smallscreen {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .app__navbar {
+        padding: 0 2.5rem;
+    }
+
+    .app__navbar-smallscreen_links {
+
+        .app__navbar-link a {
+            font-size: 54px;        
+        }
     }
 }
