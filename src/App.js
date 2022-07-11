@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.scss";
-import Navbar from "./components/Navbar";
-import Header from "./containers/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Fitness from "./pages/Fitness";
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
         <Routes>
-          <Route exact path="/" element={<Header />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/fitness" element={<Fitness />} />
         </Routes>
       </Router>
     </>

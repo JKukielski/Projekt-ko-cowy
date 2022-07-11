@@ -126,23 +126,12 @@
 
 @media screen and (max-width: 321px) {
 
-    
-.logo {
+    .logo {
     font-size: 36px;
-}
-    .app__navbar-smallscreen {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    }     
+
     .app__navbar {
         padding: 0 2.5rem;
     }
 
-    .app__navbar-smallscreen_links {
-
-        .app__navbar-link a {
-            font-size: 54px;        
-        }
-    }
 }

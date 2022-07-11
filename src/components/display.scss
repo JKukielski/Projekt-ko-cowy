@@ -1,0 +1,13 @@
+@import '../variables';
+
+.app__display {
+    width: 92%;
+    height: 95%;
+    position: relative;
+    border-radius: 10px;
+    background-color: $white-color;
+
+    -webkit-box-shadow: 0px 0px 100px -34px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 100px -34px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 100px -34px rgba(0, 0, 0, 1);
+}

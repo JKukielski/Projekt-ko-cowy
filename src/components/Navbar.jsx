@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import { BiMenu } from 'react-icons/bi';
 import { AiOutlineClose } from 'react-icons/ai';
-import { FaArrowRight } from 'react-icons/fa';
 import './navbar.scss'
 
 const Navbar = () => {
@@ -24,7 +23,7 @@ const Navbar = () => {
           </li>
           <li className="app__navbar-link">
 
-            <Link to="/fitness-hub">FITNESS HUB</Link>
+            <Link to="/fitness">FITNESS HUB</Link>
           </li>
           <li className="app__navbar-link">
 
