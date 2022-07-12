@@ -1,0 +1,33 @@
+@import '../variables';
+
+.app__fitness-header {
+    // height: 60px;
+    background-color: $white-color;
+    grid-area: 1 / 1 / 2 / 6;
+    padding: 10px 10px 10px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fitness-logo {
+    color: $primary-color;
+    font-family: $heading-font;
+    font-size: 42px;
+    transition: 0.5s ease-in-out;
+}
+
+.fitness-logo:hover {
+    color: $secondary-color;
+}
+
+.app__fitness-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100px;   
+}
+
+.app__fitness-icons svg {
+    cursor: pointer;
+}

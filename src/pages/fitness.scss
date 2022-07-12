@@ -2,17 +2,13 @@
 
 .app__fitness {
     height: 100vh;
-    width: 100vw;
-    background-color: $complementary-color;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+    width: 100%;
+    background-color: $complementary-color; 
 
-.app__display-content {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.5fr repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
 }
