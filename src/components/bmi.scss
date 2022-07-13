@@ -27,3 +27,37 @@
         right: 10px;
     }
 }
+
+.app__bmi-container {
+    padding-left: 20px;
+}
+
+.app__bmi-input_container {
+    margin: 10px 0;
+}
+
+.input-container {
+    margin-top: 10px;
+}
+
+input[type='number'] {
+    border-style: none;
+    border-bottom: 1px solid $primary-color;
+}
+.app__bmi-label {
+    font-family: $primary-font;
+    font-size: 12px;
+}
+
+.app__bmi-btn {
+    background-color: $white-color;
+    color: $primary-color;
+    padding: 6px;
+    font-family: $primary-font;
+    border-radius: 5px;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+    width: 30%;
+    margin: 7px 0 3px 0;
+    font-weight: 400;
+}

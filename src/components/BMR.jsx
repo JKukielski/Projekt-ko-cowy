@@ -7,7 +7,7 @@ const BMR = () => {
       <GrCircleInformation color="#000" fontSize={16} />
       <h2 className="app__bmr-heading">BMR & DAILY CALORIE REQUIREMENT</h2>
       <div className="app__bmr-calculator_container">
-        <div className="app__bmr-calculator__data">
+        <div className="app__bmr-calculator_data">
           <div className="input-container">
             <label className="app__bmr-label">Gender</label>
             <label className="app__bmr-label_radio">
@@ -22,14 +22,14 @@ const BMR = () => {
           </div>
           <div className="input-container">
             <label htmlFor="bmr-weight" className="app__bmr-label">
-              Weight in kg
+              Weight (kg)
             </label>
             <br />
             <input type="number" id="bmr-weight" />
           </div>
           <div className="input-container">
             <label htmlFor="bmr-height" className="app__bmr-label">
-              Height in cm
+              Height (cm)
             </label>
             <br />
             <input type="number" id="bmr-height" />
@@ -44,7 +44,9 @@ const BMR = () => {
         </div>
         <div className="app__bmr-workout">
           <div className="input-container">
-            <label className="app__bmr-label">Activity level</label>
+            <label className="app__bmr-label app__bmr-activity">
+              Activity level
+            </label>
             <br />
             <select name="activity" className="app__bmr-activity">
               <option value="">How active are you?</option>

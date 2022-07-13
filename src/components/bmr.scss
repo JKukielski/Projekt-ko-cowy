@@ -31,30 +31,35 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding: 0 0 10px 0;
     
     .app__bmr-buttons {
         width: 100%;
         display: flex;
         justify-content: space-between;
         button {
-            background-color: $primary-color;
-            color: $white-color;
+            background-color: $white-color;
+            color: $primary-color;
             padding: 6px;
             font-family: $primary-font;
             border-radius: 5px;
+            border: 1px solid $primary-color;
             cursor: pointer;
             width: 48%;
-            margin-bottom: 3px;
+            margin: 7px 0 3px 0;
+            font-weight: 400;
         }
     }
 
 }
 
 .input-container {
-    margin: 5px 0;
+    margin-top: 10px;
 }
 
+input[type='number'] {
+    border-style: none;
+    border-bottom: 1px solid $primary-color;
+}
 .app__bmr-label {
     font-family: $primary-font;
     font-size: 12px;
@@ -69,3 +74,8 @@
 .app__bmr-activity option {
     font-family: $primary-font;
 }
+
+.app__bmr-activity {
+    margin: 10px 0;
+}
+
