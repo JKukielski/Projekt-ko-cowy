@@ -27,3 +27,45 @@
     }
 }
 
+.app__bmr-calculator_container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0 0 10px 0;
+    
+    .app__bmr-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        button {
+            background-color: $primary-color;
+            color: $white-color;
+            padding: 6px;
+            font-family: $primary-font;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            margin-bottom: 3px;
+        }
+    }
+
+}
+
+.input-container {
+    margin: 5px 0;
+}
+
+.app__bmr-label {
+    font-family: $primary-font;
+    font-size: 12px;
+}
+
+.app__bmr-label_radio {
+    font-family: $primary-font;
+    font-size: 10px;
+    margin-right: 8px;
+}
+
+.app__bmr-activity option {
+    font-family: $primary-font;
+}
