@@ -36,22 +36,55 @@
 .app__results-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
-.app__results-table {
-    width: 95%;
-    text-align: left;
-    border: 1px solid black;
-    border-radius: 10px;
-    
-    th {
-    
+.app__results-row_scroll-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: scroll;
+}
 
-    &:first-child {
-        border: 1px solid black;
-        border-radius: 10px;
-    }
-    }
+.app__results-table_headings {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;  
+    border-radius: 5px 5px 0 0;
+    font-family: $primary-font;
+    background-color: $primary-color;
+    color: $white-color;
+}
+
+
+.app__results-table_workout {
+    flex-grow: 2;
+    width: 100%;
+    
+}
+.app__results-table_sets {
+    flex-grow: 1;
+    width: 100%;
+}
+.app__results-table_reps {
+    flex-grow: 1;
+    width: 100%;
+}
+.app__results-table_weight {
+    flex-grow: 1;
+    width: 100%;
+}
+.app__results-table_btn {
+    flex-grow: 1;
+    width: 60%;
 }

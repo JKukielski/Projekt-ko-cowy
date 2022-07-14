@@ -1,5 +1,6 @@
 import React from "react";
 import "./bmr.scss";
+import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
 const BMR = () => {
   return (
@@ -68,6 +69,7 @@ const BMR = () => {
             </button>
           </div>
         </div>
+        <img src={images.fitnessStats} alt="" />
       </div>
     </div>
   );

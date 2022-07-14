@@ -2,6 +2,7 @@ import React from "react";
 import "./results.scss";
 import { GrCircleInformation } from "react-icons/gr";
 import images from "../constants/images";
+import ResultsRow from "./ResultsRow";
 
 const Results = () => {
   return (
@@ -9,36 +10,22 @@ const Results = () => {
       <GrCircleInformation color="#000" fontSize={16} />
       <h2 className="app__results-heading">WORKOUT TRACKER</h2>
       <div className="app__results-container">
-        <table className="app__results-table">
-          <thead>
-            <th>Workout</th>
-            <th>Sets</th>
-            <th>Reps</th>
-            <th>Weight(kg)</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <select className="app__results-workout">
-                  <optgroup label="Chest & Triceps">
-                    <option value="">Bench press</option>
-                  </optgroup>
-                  <optgroup label="Back & Biceps">
-                    <option value="">Seated row</option>
-                  </optgroup>
-                  <optgroup label="Legs">
-                    <option value="">Squat</option>
-                  </optgroup>
-                  <optgroup label="Abdominals">
-                    <option value="">Sit ups</option>
-                  </optgroup>
-                </select>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div className="app__results-table_headings">
+          <div className="app__results-table_workout">Workout</div>
+          <div className="app__results-table_sets">Sets</div>
+          <div className="app__results-table_reps">Reps</div>
+          <div className="app__results-table_weight">Weight</div>
+          <div className="app__results-table_btn"></div>
+        </div>
+        <div className="app__results-row_scroll-container">
+          <ResultsRow />
+          <ResultsRow />
+          <ResultsRow />
+          <ResultsRow />
+          <ResultsRow />
+          <ResultsRow />
+        </div>
       </div>
-      <img src={images.fitnessStats} alt="" />
     </div>
   );
 };

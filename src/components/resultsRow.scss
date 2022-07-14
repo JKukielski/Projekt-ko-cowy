@@ -1,0 +1,54 @@
+@import '../variables';
+
+.app__results-row_container {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;  
+    
+    font-family: $primary-font;
+    background-color: $complementary-color;
+    color: $white-color;
+}
+
+.app__results-row_workout {
+    flex-grow: 2;
+    width: 100%
+}
+
+.app__results-row_reps {
+    flex-grow: 1;
+    width: 100%
+}
+
+.app__results-row_weight {
+    flex-grow: 1;
+    width: 100%
+}
+
+.app__results-row_sets {
+    flex-grow: 1;
+    width: 100%
+}
+
+.app__results-row_btn {
+    flex-grow: 1;
+    width: 100%;
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 3px;
+    color: $white-color;
+    font-family: $primary-font;
+    cursor: pointer;
+    width: 60%;
+}
+
+.app__results-row_input-container {
+    input[type="number"] {
+        background-color: transparent;
+        width: 40%;
+    }
+}
