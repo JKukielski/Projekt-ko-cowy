@@ -1,7 +1,6 @@
 import React from "react";
 import "./results.scss";
 import { GrCircleInformation } from "react-icons/gr";
-import images from "../constants/images";
 import ResultsRow from "./ResultsRow";
 
 const Results = () => {
@@ -26,6 +25,7 @@ const Results = () => {
           <ResultsRow />
         </div>
       </div>
+      <button className="app__results-add_btn">Add workout</button>
     </div>
   );
 };

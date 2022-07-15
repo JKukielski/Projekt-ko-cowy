@@ -28,6 +28,35 @@
     width: 100px;   
 }
 
+.app__fitness-user {
+    font-size: 30px;
+}
+
+.app__fitness-toggle {
+    display: none;
+    font-size: 36px;
+}
+
 .app__fitness-icons svg {
     cursor: pointer;
+}
+
+@media screen and (max-width: 426px) {
+
+    .app__fitness-header {
+        padding: 10px 10px 10px 30px;
+    }
+    .app__fitness-toggle  {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .fitness-logo {
+        font-size: 28px;
+    }
+
+    .app__fitness-toggle, .app__fitness-user {
+        font-size: 24px;
+    }
 }

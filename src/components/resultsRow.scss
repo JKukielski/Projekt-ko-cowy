@@ -16,7 +16,7 @@
 
 .app__results-row_workout {
     flex-grow: 2;
-    width: 100%
+    width: 100%;
 }
 
 .app__results-row_reps {
@@ -50,5 +50,16 @@
     input[type="number"] {
         background-color: transparent;
         width: 40%;
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .app__results-row_btn {
+        font-size: 11px;
+        padding: 4px;
+    }
+
+    .app__results-row_workout {
+        margin-right: 20px;
     }
 }

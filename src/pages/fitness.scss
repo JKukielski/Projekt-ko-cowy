@@ -7,8 +7,28 @@
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 0.5fr repeat(5, 1fr);
+    grid-template-rows: 0fr repeat(5, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
 
+}
+
+@media screen and (max-width: 1025px) {
+    .app__fitness {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .app__fitness {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 }
