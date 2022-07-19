@@ -113,21 +113,21 @@
         h2 {
             font-size: 14px;
         }
-    .app__results-table_headings {
-        font-size: 14px;
-    }
+        .app__results-table_headings {
+            font-size: 14px;
+        }
 
-    .app__results-row_scroll-container {
-        height: auto;
-    }
+        .app__results-row_scroll-container {
+            height: auto;
+        }
 
-    .app__results-table_btn {
-        flex-grow: 1;
-        width: 60%;
+        .app__results-table_btn {
+            flex-grow: 1;
+            width: 60%;
+        }
     }
-}
 
 .app__results-table_workout {
-margin-right: 40px;
+    margin-right: 40px;
 }
 }

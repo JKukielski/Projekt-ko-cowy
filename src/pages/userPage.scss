@@ -1,0 +1,63 @@
+@import '../variables';
+
+.app__user {
+    width: 100%;
+    height: 100%;
+    background-color: $complementary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__user-container {
+    width: 95%;
+    height: 90%;
+    background-color: $white-color;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.app__user-heading {
+    font-family: $primary-font;
+    font-size: 24px;
+    margin-bottom: 35px;
+}
+
+.app__user-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__user-subheading {
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.app__user-measurements-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around   ;
+    align-items: center;
+
+    .app__user-section {
+        // border: 1px solid black;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+.app__user-results {
+    width: 95%;
+    // border: 1px solid black;
+    height: 300px;
+    margin-top: 20px;
+}

@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./bmr.scss";
 import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
+import Tooltip from "./Tooltip";
 const BMR = () => {
+  const [toggleTooltip, setToggleTooltip] = useState(false);
+
   return (
     <div className="app__bmr">
-      <GrCircleInformation color="#000" fontSize={16} />
+      <GrCircleInformation
+        color="#000"
+        fontSize={16}
+        onMouseEnter={() => setToggleTooltip(true)}
+        onMouseLeave={() => setToggleTooltip(false)}
+      />
+      {toggleTooltip && (
+        <Tooltip text="The Basal Metabolic Rate (BMR) Calculator estimates your basal metabolic rate—the amount of energy expended while at rest in a neutrally temperate environment, and in a post-absorptive state (meaning that the digestive system is inactive, which requires about 12 hours of fasting)." />
+      )}
       <h2 className="app__bmr-heading">BMR & DAILY CALORIE REQUIREMENT</h2>
       <div className="app__bmr-calculator_container">
         <div className="app__bmr-calculator_data">

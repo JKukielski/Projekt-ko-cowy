@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./bmi.scss";
 import { GrCircleInformation } from "react-icons/gr";
 import images from "../constants/images";
+import Tooltip from "./Tooltip";
 const BMI = () => {
+  const [toggleTooltip, setToggleTooltip] = useState(false);
+
   return (
     <div className="app__bmi">
-      <GrCircleInformation color="#000" fontSize={16} />
+      <GrCircleInformation
+        color="#000"
+        fontSize={16}
+        onMouseEnter={() => setToggleTooltip(true)}
+        onMouseLeave={() => setToggleTooltip(false)}
+      />
+      {toggleTooltip && (
+        <Tooltip text="Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women." />
+      )}
       <h2 className="app__bmi-header">BMI</h2>
       <div className="app__bmi-container">
         <div className="app__bmi-input_container">

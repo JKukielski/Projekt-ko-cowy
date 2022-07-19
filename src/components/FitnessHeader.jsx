@@ -13,7 +13,10 @@ const FitnessHeader = () => {
         </a>
       </Link>
       <div className="app__fitness-icons">
-        <FaRegUserCircle color="#000" className="app__fitness-user" />
+        <Link to="/user">
+          <FaRegUserCircle color="#000" className="app__fitness-user" />
+        </Link>
+
         <BiMenu color="#000" className="app__fitness-toggle" />
       </div>
     </div>

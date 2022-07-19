@@ -1,0 +1,15 @@
+@import '../variables';
+
+.app__tooltip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: $primary-color;
+    inset: 0;
+    z-index: 1;
+    color: $white-color;
+    font-family: $primary-font;
+    font-size: 14px;
+    padding: 20px;
+}

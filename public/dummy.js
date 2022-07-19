@@ -4,8 +4,41 @@ import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
 import Tooltip from "./Tooltip";
 
-const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
+const Measurements = () => {
   const [toggleTooltip, setToggleTooltip] = useState(false);
+  const [submittedForm, setSubmittedForm] = useState({
+    weight: null,
+    height: null,
+    shoulder: null,
+    chest: null,
+    abdominals: null,
+    hips: null,
+    thigh: null,
+    calf: null,
+  });
+
+  const [weight, setWeight] = useState();
+  const [height, setHeight] = useState();
+  const [shoulder, setShoulder] = useState();
+  const [chest, setChest] = useState();
+  const [abdominals, setAbdominals] = useState();
+  const [hips, setHips] = useState();
+  const [thigh, setThigh] = useState();
+  const [calf, setCalf] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmittedForm({
+      weight: weight,
+      height: height,
+      shoulder: shoulder,
+      chest: chest,
+      abdominals: abdominals,
+      hips: hips,
+      thigh: thigh,
+      calf: calf,
+    });
+  };
 
   return (
     <div className="app__measurements">
@@ -25,9 +58,9 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="weight"
+            value={weight}
             name="weight"
-            value={form.weight}
-            onChange={handleChange}
+            onChange={(e) => setWeight(e.target.value)}
           />
           <br />
           <label htmlFor="height">Height (cm)</label>
@@ -35,9 +68,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="height"
-            name="height"
-            value={form.height}
-            onChange={handleChange}
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
           />
           <br />
           <label htmlFor="shoulder">Shoulders</label>
@@ -45,9 +77,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="shoulder"
-            name="shoulder"
-            value={form.shoulder}
-            onChange={handleChange}
+            value={shoulder}
+            onChange={(e) => setShoulder(e.target.value)}
           />
           <br />
           <label htmlFor="chest">Chest</label>
@@ -55,9 +86,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="chest"
-            name="chest"
-            value={form.chest}
-            onChange={handleChange}
+            value={chest}
+            onChange={(e) => setChest(e.target.value)}
           />
           <br />
           <label htmlFor="abdominal">Abdominals</label>
@@ -65,9 +95,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="abdominal"
-            name="abdominal"
-            value={form.abdominal}
-            onChange={handleChange}
+            value={abdominals}
+            onChange={(e) => setAbdominals(e.target.value)}
           />
           <br />
           <label htmlFor="hips">Hips</label>
@@ -75,9 +104,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="hips"
-            name="hips"
-            value={form.hips}
-            onChange={handleChange}
+            value={hips}
+            onChange={(e) => setHips(e.target.value)}
           />
           <br />
           <label htmlFor="thigh">Thighs</label>
@@ -85,9 +113,8 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="thigh"
-            name="thigh"
-            value={form.thigh}
-            onChange={handleChange}
+            value={thigh}
+            onChange={(e) => setThigh(e.target.value)}
           />
           <br />
           <label htmlFor="calf">Calves</label>
@@ -95,22 +122,13 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           <input
             type="number"
             id="calf"
-            name="calf"
-            value={form.calf}
-            onChange={handleChange}
+            value={calf}
+            onChange={(e) => setCalf(e.target.value)}
           />
           <button type="submit" className="app__measurements-btn">
             SAVE RESULTS
           </button>
         </form>
-        <p>{submitForm.weight}</p>
-        <p>{submitForm.height}</p>
-        <p>{submitForm.shoulder}</p>
-        <p>{submitForm.chest}</p>
-        <p>{submitForm.abdominal}</p>
-        <p>{submitForm.hips}</p>
-        <p>{submitForm.thigh}</p>
-        <p>{submitForm.calf}</p>
       </div>
       <img src={images.success} alt="" />
     </div>
