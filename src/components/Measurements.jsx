@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./measurements.scss";
 import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
@@ -103,14 +103,6 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
             SAVE RESULTS
           </button>
         </form>
-        <p>{submitForm.weight}</p>
-        <p>{submitForm.height}</p>
-        <p>{submitForm.shoulder}</p>
-        <p>{submitForm.chest}</p>
-        <p>{submitForm.abdominal}</p>
-        <p>{submitForm.hips}</p>
-        <p>{submitForm.thigh}</p>
-        <p>{submitForm.calf}</p>
       </div>
       <img src={images.success} alt="" />
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -6,15 +6,10 @@ import Fitness from "./pages/Fitness";
 import UserPage from "./pages/UserPage";
 
 function App() {
-  const [form, setForm] = useState({
-    weight: 0,
-    height: 0,
-    shoulder: 0,
-    chest: 0,
-    abdominal: 0,
-    hips: 0,
-    thigh: 0,
-    calf: 0,
+  const [form, setForm] = useState(() => {
+    const saved = localStorage.getItem("form");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
   });
 
   const [submitForm, setSubmitForm] = useState({
@@ -27,6 +22,10 @@ function App() {
     thigh: 0,
     calf: 0,
   });
+
+  useEffect(() => {
+    localStorage.setItem("form", JSON.stringify(form));
+  }, [form]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -69,7 +68,18 @@ function App() {
               />
             }
           />
-          <Route exact path="/user" element={<UserPage />} />
+          <Route
+            exact
+            path="/user"
+            element={
+              <UserPage
+                handleChange={handleChange}
+                form={form}
+                submitForm={submitForm}
+                handleSubmit={handleSubmit}
+              />
+            }
+          />
         </Routes>
       </Router>
     </>
