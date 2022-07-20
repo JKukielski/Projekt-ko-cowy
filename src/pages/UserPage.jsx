@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import FitnessHeader from "../components/FitnessHeader";
 
 import "./userPage.scss";
-const UserPage = ({ handleChange, form, submitForm, handleSubmit }) => {
+const UserPage = ({ form }) => {
   return (
     <>
       <FitnessHeader />

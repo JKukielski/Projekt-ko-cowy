@@ -1,7 +1,7 @@
 @import '../variables';
 
 .app__fitness {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: $complementary-color; 
 
@@ -10,6 +10,7 @@
     grid-template-rows: 0fr repeat(5, 1fr);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    position: relative;
 
 }
 

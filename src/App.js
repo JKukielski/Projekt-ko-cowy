@@ -23,10 +23,6 @@ function App() {
     calf: 0,
   });
 
-  useEffect(() => {
-    localStorage.setItem("form", JSON.stringify(form));
-  }, [form]);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => {
@@ -49,7 +45,33 @@ function App() {
       thigh: form.thigh,
       calf: form.calf,
     });
+    localStorage.setItem("form", JSON.stringify(form));
   };
+
+  const handleReset = (e) => {
+    e.preventDefault();
+    setForm({
+      weight: 0,
+      height: 0,
+      shoulder: 0,
+      chest: 0,
+      abdominal: 0,
+      hips: 0,
+      thigh: 0,
+      calf: 0,
+    });
+  };
+  // const handleBMRChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setBMR((prevState) => {
+  //     return {
+  //       ...prevState,
+  //       [name]: value,
+  //     };
+  //   });
+  // };
+  // const calculateBMR = (e) => {};
+  // const calculateCalories = (e) => {};
 
   return (
     <>
@@ -65,6 +87,10 @@ function App() {
                 form={form}
                 submitForm={submitForm}
                 handleSubmit={handleSubmit}
+                handleReset={handleReset}
+                // handleBMRChange={handleBMRChange}
+                // calculateBMR={calculateBMR}
+                // calculateCalories={calculateCalories}
               />
             }
           />
@@ -77,6 +103,9 @@ function App() {
                 form={form}
                 submitForm={submitForm}
                 handleSubmit={handleSubmit}
+                // handleBMRChange={handleBMRChange}
+                // calculateBMR={calculateBMR}
+                // calculateCalories={calculateCalories}
               />
             }
           />

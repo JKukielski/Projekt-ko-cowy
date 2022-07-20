@@ -4,7 +4,7 @@ import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
 import Tooltip from "./Tooltip";
 
-const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
+const Measurements = ({ handleChange, form, handleSubmit, handleReset }) => {
   const [toggleTooltip, setToggleTooltip] = useState(false);
 
   return (
@@ -101,6 +101,13 @@ const Measurements = ({ handleChange, form, submitForm, handleSubmit }) => {
           />
           <button type="submit" className="app__measurements-btn">
             SAVE RESULTS
+          </button>
+          <button
+            type="button"
+            className="app__measurements-btn"
+            onClick={handleReset}
+          >
+            RESET
           </button>
         </form>
       </div>
