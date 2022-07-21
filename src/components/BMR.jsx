@@ -17,7 +17,6 @@ const BMR = () => {
     weight: "",
     age: "",
     height: "",
-    activity: "",
     error: "",
   });
 
@@ -31,14 +30,13 @@ const BMR = () => {
     });
   };
 
-  const calculateBMR = (e) => {
-    console.log("Hello");
+  const calculateBMR = () => {
     setSubmitBMR({
       gender: bmr.gender,
       weight: bmr.weight,
       age: bmr.age,
       height: bmr.height,
-      activity: bmr.activity,
+      calories: "",
       bmr: "",
       error: "",
     });
@@ -53,8 +51,7 @@ const BMR = () => {
         error: "Please fill in all required fields",
       });
     }
-    // Man BMR: 66.5 + ( 13.75 x weight in kg) + (5.003 x height in cm) - (6.755 x age in years)
-    // Woman BMR: 655 + (9.563 x weight in kg) + (1.850 x height in cm) - (4.676 x age in years)
+
     let bmrCalc = "";
     if (bmr.gender == "male") {
       bmrCalc = (
@@ -71,18 +68,14 @@ const BMR = () => {
         4.33 * bmr.age
       ).toFixed(2);
     }
-    // const bmrCalc =
-    //   88.362 + 13.397 * bmr.weight + 4.799 * bmr.height - 5.677 * bmr.age;
 
     setSubmitBMR({
       bmr: bmrCalc,
     });
-    localStorage.setItem("bmr", JSON.stringify(bmr));
+    localStorage.setItem("bmr", JSON.stringify(submitBMR.bmr));
   };
 
-  const calculateCalories = (e) => {
-    console.log("Hello calories");
-  };
+  const calculateCalories = () => {};
 
   let resultBMR;
   if (submitBMR.bmr) {

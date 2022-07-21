@@ -28,6 +28,12 @@
     }
 }
 
+.app__bmi-error {
+    color: red;
+    font-family: $primary-font;
+    font-size: 12px;
+    margin-top: 10px;
+}
 .app__bmi-container {
     padding-left: 20px;
 }

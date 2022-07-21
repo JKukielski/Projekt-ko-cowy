@@ -61,17 +61,6 @@ function App() {
       calf: 0,
     });
   };
-  // const handleBMRChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setBMR((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       [name]: value,
-  //     };
-  //   });
-  // };
-  // const calculateBMR = (e) => {};
-  // const calculateCalories = (e) => {};
 
   return (
     <>
@@ -90,7 +79,6 @@ function App() {
                 handleReset={handleReset}
                 // handleBMRChange={handleBMRChange}
                 // calculateBMR={calculateBMR}
-                // calculateCalories={calculateCalories}
               />
             }
           />
@@ -105,7 +93,6 @@ function App() {
                 handleSubmit={handleSubmit}
                 // handleBMRChange={handleBMRChange}
                 // calculateBMR={calculateBMR}
-                // calculateCalories={calculateCalories}
               />
             }
           />
