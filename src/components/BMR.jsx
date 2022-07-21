@@ -18,7 +18,6 @@ const BMR = () => {
     age: "",
     height: "",
     activity: "",
-    bmr: "",
     error: "",
   });
 
@@ -40,8 +39,8 @@ const BMR = () => {
       age: bmr.age,
       height: bmr.height,
       activity: bmr.activity,
-      bmr: bmr.bmr,
-      error: bmr.error,
+      bmr: "",
+      error: "",
     });
     if (
       bmr.gender === "" ||
@@ -50,8 +49,34 @@ const BMR = () => {
       bmr.height === "" ||
       bmr.activity === ""
     ) {
-      console.log("Hello1");
+      setSubmitBMR({
+        error: "Please fill in all required fields",
+      });
     }
+    // Man BMR: 66.5 + ( 13.75 x weight in kg) + (5.003 x height in cm) - (6.755 x age in years)
+    // Woman BMR: 655 + (9.563 x weight in kg) + (1.850 x height in cm) - (4.676 x age in years)
+    let bmrCalc = "";
+    if (bmr.gender == "male") {
+      bmrCalc = (
+        88.362 +
+        13.397 * bmr.weight +
+        4.799 * bmr.height -
+        5.677 * bmr.age
+      ).toFixed(2);
+    } else if (bmr.gender == "female") {
+      bmrCalc = (
+        447.593 +
+        9.247 * bmr.weight +
+        3.098 * bmr.height -
+        4.33 * bmr.age
+      ).toFixed(2);
+    }
+    // const bmrCalc =
+    //   88.362 + 13.397 * bmr.weight + 4.799 * bmr.height - 5.677 * bmr.age;
+
+    setSubmitBMR({
+      bmr: bmrCalc,
+    });
     localStorage.setItem("bmr", JSON.stringify(bmr));
   };
 
@@ -59,11 +84,11 @@ const BMR = () => {
     console.log("Hello calories");
   };
 
-  let error;
-
-  if (submitBMR.error) {
-    error = <p className="error">{submitBMR.error}</p>;
+  let resultBMR;
+  if (submitBMR.bmr) {
+    resultBMR = <p className="app__bmr-resultBMR">{submitBMR.bmr}</p>;
   }
+
   return (
     <div className="app__bmr">
       <GrCircleInformation
@@ -76,7 +101,7 @@ const BMR = () => {
         <Tooltip text="The Basal Metabolic Rate (BMR) Calculator estimates your basal metabolic rate—the amount of energy expended while at rest in a neutrally temperate environment, and in a post-absorptive state (meaning that the digestive system is inactive, which requires about 12 hours of fasting)." />
       )}
       <h2 className="app__bmr-heading">BMR & DAILY CALORIE REQUIREMENT</h2>
-      {error}
+      <p className="app__bmr-error">{submitBMR.error}</p>
       <div className="app__bmr-calculator_container">
         <div className="app__bmr-calculator_data">
           <div className="input-container">
@@ -87,7 +112,7 @@ const BMR = () => {
                 type="radio"
                 name="gender"
                 id="genderM"
-                value="1"
+                value="male"
                 onChange={handleBMRChange}
               />
               Male
@@ -97,7 +122,7 @@ const BMR = () => {
                 type="radio"
                 name="gender"
                 id="genderF"
-                value="2"
+                value="female"
                 onChange={handleBMRChange}
               />
               Female
@@ -175,6 +200,7 @@ const BMR = () => {
             >
               CALCULATE BMR
             </button>
+
             <button
               type="button"
               className="app__bmr-button"
@@ -182,6 +208,7 @@ const BMR = () => {
             >
               CALCULATE CALORIES
             </button>
+            {resultBMR}
           </div>
         </div>
         <img src={images.fitnessStats} alt="" />

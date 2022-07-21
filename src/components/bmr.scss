@@ -27,6 +27,13 @@
     }
 }
 
+.app__bmr-error {
+    color: red;
+    font-family: $primary-font;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
 .app__bmr-calculator_container {
     display: flex;
     justify-content: space-around;
