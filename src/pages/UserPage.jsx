@@ -66,11 +66,28 @@ const UserPage = ({ form, bmr, submitBMR, submitBMI, bmi }) => {
               </div>
               <div className="app__user-section app__user-bmr">
                 <h2 className="app__user-subheading">LATEST BMR</h2>
-                <p>{submitBMR.bmr}</p>
+                <div className="app__user-bmr_content">
+                  <h3 className="app__user-bmr_heading">
+                    YOUR LAST BMR RESULT
+                  </h3>
+                  <p className="app__user-bmr_result">{submitBMR.bmr}</p>
+                  <h3 className="app__user-bmr_heading">FOR ENTERED DATA:</h3>
+                  <p>Weight: {bmr.weight}kg</p>
+                  <p>Height: {bmr.height}kg</p>
+                  <p>Age: {bmr.age}kg</p>
+                </div>
               </div>
               <div className="app__user-section app__user-bmi">
                 <h2 className="app__user-subheading">LATEST BMI</h2>
-                <p>{submitBMI.bmi}</p>
+                <div className="app__user-bmi_content">
+                  <h3 className="app__user-bmi_heading">
+                    YOUR LAST BMI RESULT
+                  </h3>
+                  <p className="app__user-bmi_result">{submitBMI.bmi}</p>
+                  <h3 className="app__user-bmi_heading">FOR ENTERED DATA:</h3>
+                  <p>Weight: {bmi.weight}kg</p>
+                  <p>Height: {bmr.height}kg</p>
+                </div>
               </div>
             </div>
             <div className="app__user-results">

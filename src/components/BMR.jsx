@@ -94,12 +94,6 @@ const BMR = ({ handleBMRChange, calculateBMR, bmr, submitBMR }) => {
           </div>
         </div>
         <div className="app__bmr-workout">
-          <div className="input-container">
-            <label className="app__bmr-label app__bmr-activity">
-              Activity level
-            </label>
-            <br />
-          </div>
           <div className="app__bmr-buttons">
             <button
               type="button"

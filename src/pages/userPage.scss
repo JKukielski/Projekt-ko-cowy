@@ -43,23 +43,25 @@
 }
 
 .app__user-measurements-container {
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: space-around   ;
     align-items: center;
 
     .app__user-section {
-        // border: 1px solid black;
         width: 400px;
-        height: 400px;
+        height: 330px;
     }
+}
+
+.app__user-section:first-child {
+    width: 70%;
 }
 
 .app__user-results {
     width: 95%;
-    // border: 1px solid black;
     height: 300px;
-    margin-top: 20px;
+    
 }
 
 .app__user-measurements {
@@ -69,7 +71,8 @@
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 30px;
-
+    width: 80%;
+    
     .app__user-measurements_single {
         display: flex;
         flex-direction: column;
@@ -84,4 +87,48 @@
             font-weight: 500;
         }
     }
+}
+
+.app__user-bmr_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+    .app__user-bmr_result {
+        font-size: 42px;
+        font-family: $heading-font;
+        color: #18A90B;
+    }
+
+    p {
+        font-family: $primary-font;
+        font-weight: 500;
+    }
+}
+
+.app__user-bmr_heading {
+    font-size: 22px;
+    font-family: $heading-font;
+}
+
+.app__user-bmi_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+
+    .app__user-bmi_result {
+        font-size: 42px;
+        font-family: $heading-font;
+        color: #18A90B;
+    }
+
+    p {
+        font-family: $primary-font;
+        font-weight: 500;
+    }
+}
+
+.app__user-bmi_heading {
+    font-size: 22px;
+    font-family: $heading-font;
 }
