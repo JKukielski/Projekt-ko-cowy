@@ -102,13 +102,6 @@ const Measurements = ({ handleChange, form, handleSubmit, handleReset }) => {
           <button type="submit" className="app__measurements-btn">
             SAVE RESULTS
           </button>
-          <button
-            type="button"
-            className="app__measurements-btn"
-            onClick={handleReset}
-          >
-            RESET
-          </button>
         </form>
       </div>
       <img src={images.success} alt="" />

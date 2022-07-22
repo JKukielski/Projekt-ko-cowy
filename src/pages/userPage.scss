@@ -61,3 +61,27 @@
     height: 300px;
     margin-top: 20px;
 }
+
+.app__user-measurements {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 30px;
+
+    .app__user-measurements_single {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+            font-size: 22px;
+            font-family: $heading-font;
+        }
+
+        p {
+            font-family: $primary-font;
+            font-weight: 500;
+        }
+    }
+}

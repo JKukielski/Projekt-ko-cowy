@@ -62,6 +62,77 @@ function App() {
     });
   };
 
+  const [bmr, setBmr] = useState(() => {
+    const savedBMR = localStorage.getItem("bmr");
+    const initialValueBMR = JSON.parse(savedBMR);
+    return initialValueBMR || "";
+  });
+
+  const [submitBMR, setSubmitBMR] = useState({
+    gender: "",
+    weight: "",
+    age: "",
+    height: "",
+    error: "",
+  });
+
+  const handleBMRChange = (e) => {
+    const { name, value } = e.target;
+    setBmr((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const calculateBMR = () => {
+    setSubmitBMR({
+      gender: bmr.gender,
+      weight: bmr.weight,
+      age: bmr.age,
+      height: bmr.height,
+      calories: "",
+      bmr: "",
+      error: "",
+    });
+
+    if (
+      bmr.gender === "" ||
+      bmr.weight === "" ||
+      bmr.age === "" ||
+      bmr.height === "" ||
+      bmr.activity === ""
+    ) {
+      setSubmitBMR({
+        error: "Please fill in all required fields",
+      });
+    } else {
+      let bmrCalc = "";
+      if (bmr.gender === "male") {
+        bmrCalc = (
+          88.362 +
+          13.397 * bmr.weight +
+          4.799 * bmr.height -
+          5.677 * bmr.age
+        ).toFixed(2);
+      } else if (bmr.gender === "female") {
+        bmrCalc = (
+          447.593 +
+          9.247 * bmr.weight +
+          3.098 * bmr.height -
+          4.33 * bmr.age
+        ).toFixed(2);
+      }
+
+      setSubmitBMR({
+        bmr: bmrCalc,
+      });
+    }
+
+    localStorage.setItem("bmr", JSON.stringify(bmr));
+  };
+
   return (
     <>
       <Router>
@@ -77,8 +148,10 @@ function App() {
                 submitForm={submitForm}
                 handleSubmit={handleSubmit}
                 handleReset={handleReset}
-                // handleBMRChange={handleBMRChange}
-                // calculateBMR={calculateBMR}
+                handleBMRChange={handleBMRChange}
+                calculateBMR={calculateBMR}
+                bmr={bmr}
+                submitBMR={submitBMR}
               />
             }
           />
@@ -91,8 +164,10 @@ function App() {
                 form={form}
                 submitForm={submitForm}
                 handleSubmit={handleSubmit}
-                // handleBMRChange={handleBMRChange}
-                // calculateBMR={calculateBMR}
+                handleBMRChange={handleBMRChange}
+                calculateBMR={calculateBMR}
+                bmr={bmr}
+                submitBMR={submitBMR}
               />
             }
           />

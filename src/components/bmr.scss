@@ -4,7 +4,7 @@
     grid-area: 2 / 2 / 4 / 4; 
     background-color: $white-color;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 40px;
     position: relative;
 
     h2 {
@@ -36,13 +36,14 @@
 
 .app__bmr-calculator_container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+    padding-right: 100px;
     
     .app__bmr-buttons {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         button {
             background-color: $white-color;
             color: $primary-color;
@@ -51,12 +52,28 @@
             border-radius: 5px;
             border: 1px solid $primary-color;
             cursor: pointer;
-            width: 48%;
+            width: 100%;
             margin: 7px 0 3px 0;
             font-weight: 400;
         }
     }
 
+    .app__bmr-resultBMR_heading {
+        font-family: $primary-font;
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .app__bmr-resultBMR {
+        margin-top: 8px;
+        font-size: 42px;
+        font-family: $heading-font;
+        color: #18A90B;
+    }
+
+}
+.app__bmr-workout {
+    display: flex;
+    flex-direction: column;
 }
 
 .input-container {
@@ -84,6 +101,11 @@ input[type='number'] {
 
 .app__bmr-activity {
     margin: 10px 0;
+}
+
+
+@media screen and (min-width: 1026px) {
+
 }
 
 @media screen and (max-width: 1025px) {

@@ -13,7 +13,11 @@ const BMI = () => {
     return initialValue || "";
   });
 
-  const [submitBMI, setSubmitBMI] = useState({ weight: 0, height: 0 });
+  const [submitBMI, setSubmitBMI] = useState({
+    weight: "",
+    height: "",
+    error: "",
+  });
 
   const handleBMIChange = (e) => {
     const { name, value } = e.target;
@@ -27,14 +31,13 @@ const BMI = () => {
 
   const handleBMISubmit = (e) => {
     e.preventDefault();
-    console.log("Hello");
     setSubmitBMI({
       weight: bmi.weight,
       height: bmi.height,
       error: "",
       bmi: "",
     });
-    if (bmi.weight === "" || bmi.height === "") {
+    if (submitBMI.weight === "" || submitBMI.height === "") {
       setSubmitBMI({
         error: "Please enter weight and height",
       });
@@ -77,6 +80,7 @@ const BMI = () => {
               type="number"
               id="bmi-weight"
               name="weight"
+              value={bmi.weight}
               onChange={handleBMIChange}
             />
           </div>
@@ -89,6 +93,7 @@ const BMI = () => {
               type="number"
               id="bmi-weight"
               name="height"
+              value={bmi.height}
               onChange={handleBMIChange}
             />
           </div>
@@ -96,8 +101,10 @@ const BMI = () => {
             CALCULATE BMI
           </button>
         </form>
+        <h3 className="app__bmr-resultBMI_heading">Your BMI result:</h3>
         {resultBMI}
       </div>
+
       <img src={images.performance} alt="" />
     </div>
   );

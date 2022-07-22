@@ -1,81 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./bmr.scss";
 import images from "../constants/images";
 import { GrCircleInformation } from "react-icons/gr";
 import Tooltip from "./Tooltip";
-const BMR = () => {
+
+const BMR = ({ handleBMRChange, calculateBMR, bmr, submitBMR }) => {
   const [toggleTooltip, setToggleTooltip] = useState(false);
-
-  const [bmr, setBmr] = useState(() => {
-    const saved = localStorage.getItem("bmr");
-    const initialValue = JSON.parse(saved);
-    return initialValue || "";
-  });
-
-  const [submitBMR, setSubmitBMR] = useState({
-    gender: "",
-    weight: "",
-    age: "",
-    height: "",
-    error: "",
-  });
-
-  const handleBMRChange = (e) => {
-    const { name, value } = e.target;
-    setBmr((prevState) => {
-      return {
-        ...prevState,
-        [name]: value,
-      };
-    });
-  };
-
-  const calculateBMR = () => {
-    setSubmitBMR({
-      gender: bmr.gender,
-      weight: bmr.weight,
-      age: bmr.age,
-      height: bmr.height,
-      calories: "",
-      bmr: "",
-      error: "",
-    });
-    if (
-      bmr.gender === "" ||
-      bmr.weight === "" ||
-      bmr.age === "" ||
-      bmr.height === "" ||
-      bmr.activity === ""
-    ) {
-      setSubmitBMR({
-        error: "Please fill in all required fields",
-      });
-    }
-
-    let bmrCalc = "";
-    if (bmr.gender == "male") {
-      bmrCalc = (
-        88.362 +
-        13.397 * bmr.weight +
-        4.799 * bmr.height -
-        5.677 * bmr.age
-      ).toFixed(2);
-    } else if (bmr.gender == "female") {
-      bmrCalc = (
-        447.593 +
-        9.247 * bmr.weight +
-        3.098 * bmr.height -
-        4.33 * bmr.age
-      ).toFixed(2);
-    }
-
-    setSubmitBMR({
-      bmr: bmrCalc,
-    });
-    localStorage.setItem("bmr", JSON.stringify(submitBMR.bmr));
-  };
-
-  const calculateCalories = () => {};
 
   let resultBMR;
   if (submitBMR.bmr) {
@@ -169,21 +99,6 @@ const BMR = () => {
               Activity level
             </label>
             <br />
-            <select
-              name="activity"
-              className="app__bmr-activity"
-              value={bmr.activity}
-              onChange={handleBMRChange}
-            >
-              <option value="">How active are you?</option>
-              <option value="1.2">Sedentary: little or no exercise</option>
-              <option value="1.375">Exercise 1-3 times/week</option>
-              <option value="1.55">Exercise 4-5 times/week</option>
-              <option value="1.725">
-                Daily exercise or intense exercise 3-4 times/week
-              </option>
-              <option value="1.9">Intense exercise 6-7 times/week</option>
-            </select>
           </div>
           <div className="app__bmr-buttons">
             <button
@@ -193,17 +108,11 @@ const BMR = () => {
             >
               CALCULATE BMR
             </button>
-
-            <button
-              type="button"
-              className="app__bmr-button"
-              onClick={calculateCalories}
-            >
-              CALCULATE CALORIES
-            </button>
-            {resultBMR}
           </div>
+          <h3 className="app__bmr-resultBMR_heading">Your BMR result:</h3>
+          {resultBMR}
         </div>
+
         <img src={images.fitnessStats} alt="" />
       </div>
     </div>

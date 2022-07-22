@@ -12,9 +12,10 @@ const Fitness = ({
   submitForm,
   handleSubmit,
   handleReset,
-  // handleBMRChange,
-  // calculateBMR,
-  // calculateCalories,
+  handleBMRChange,
+  calculateBMR,
+  bmr,
+  submitBMR,
 }) => {
   // const [login, setLogin] = useState(true);
 
@@ -33,11 +34,13 @@ const Fitness = ({
           submitForm={submitForm}
           handleSubmit={handleSubmit}
           handleReset={handleReset}
-          // handleBMRChange={handleBMRChange}
-          // calculateBMR={calculateBMR}
-          // calculateCalories={calculateCalories}
         />
-        <BMR />
+        <BMR
+          handleBMRChange={handleBMRChange}
+          calculateBMR={calculateBMR}
+          bmr={bmr}
+          submitBMR={submitBMR}
+        />
         <BMI />
         <Results />
       </div>
