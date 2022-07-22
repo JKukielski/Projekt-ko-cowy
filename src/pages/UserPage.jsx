@@ -2,7 +2,7 @@ import React from "react";
 import FitnessHeader from "../components/FitnessHeader";
 
 import "./userPage.scss";
-const UserPage = ({ form, bmr }) => {
+const UserPage = ({ form, bmr, submitBMR, submitBMI, bmi }) => {
   return (
     <>
       <FitnessHeader />
@@ -66,10 +66,11 @@ const UserPage = ({ form, bmr }) => {
               </div>
               <div className="app__user-section app__user-bmr">
                 <h2 className="app__user-subheading">LATEST BMR</h2>
-                <p>{bmr.weight}</p>
+                <p>{submitBMR.bmr}</p>
               </div>
               <div className="app__user-section app__user-bmi">
                 <h2 className="app__user-subheading">LATEST BMI</h2>
+                <p>{submitBMI.bmi}</p>
               </div>
             </div>
             <div className="app__user-results">

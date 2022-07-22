@@ -16,6 +16,10 @@ const Fitness = ({
   calculateBMR,
   bmr,
   submitBMR,
+  bmi,
+  submitBMI,
+  handleBMIChange,
+  handleBMISubmit,
 }) => {
   // const [login, setLogin] = useState(true);
 
@@ -41,7 +45,12 @@ const Fitness = ({
           bmr={bmr}
           submitBMR={submitBMR}
         />
-        <BMI />
+        <BMI
+          bmi={bmi}
+          submitBMI={submitBMI}
+          handleBMIChange={handleBMIChange}
+          handleBMISubmit={handleBMISubmit}
+        />
         <Results />
       </div>
     </>

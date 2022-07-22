@@ -128,11 +128,56 @@ function App() {
       setSubmitBMR({
         bmr: bmrCalc,
       });
+      localStorage.setItem("bmrResult", JSON.stringify(submitBMR.bmr));
     }
 
     localStorage.setItem("bmr", JSON.stringify(bmr));
   };
 
+  const [bmi, setBmi] = useState(() => {
+    const saved = localStorage.getItem("bmi");
+    const initialValue = JSON.parse(saved);
+    return initialValue || "";
+  });
+
+  const [submitBMI, setSubmitBMI] = useState({
+    weight: "",
+    height: "",
+    error: "",
+  });
+
+  const handleBMIChange = (e) => {
+    const { name, value } = e.target;
+    setBmi((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleBMISubmit = (e) => {
+    e.preventDefault();
+    setSubmitBMI({
+      weight: bmi.weight,
+      height: bmi.height,
+      error: "",
+      bmi: "",
+    });
+    if (submitBMI.weight === "" || submitBMI.height === "") {
+      setSubmitBMI({
+        error: "Please enter weight and height",
+      });
+    } else {
+      let bmiCalc = (bmi.weight / ((bmi.height * bmi.height) / 10000)).toFixed(
+        1
+      );
+      setSubmitBMI({
+        bmi: bmiCalc,
+      });
+      localStorage.setItem("bmiResult", JSON.stringify(submitBMI.bmi));
+    }
+  };
   return (
     <>
       <Router>
@@ -152,6 +197,10 @@ function App() {
                 calculateBMR={calculateBMR}
                 bmr={bmr}
                 submitBMR={submitBMR}
+                bmi={bmi}
+                submitBMI={submitBMI}
+                handleBMIChange={handleBMIChange}
+                handleBMISubmit={handleBMISubmit}
               />
             }
           />
@@ -168,6 +217,10 @@ function App() {
                 calculateBMR={calculateBMR}
                 bmr={bmr}
                 submitBMR={submitBMR}
+                bmi={bmi}
+                submitBMI={submitBMI}
+                handleBMIChange={handleBMIChange}
+                handleBMISubmit={handleBMISubmit}
               />
             }
           />
